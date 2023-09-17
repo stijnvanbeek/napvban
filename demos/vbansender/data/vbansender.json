@@ -1,0 +1,105 @@
+{
+    "Objects": [
+        {
+            "Type": "nap::Entity",
+            "mID": "VbanEntity",
+            "Components": [
+                {
+                    "Type": "nap::audio::PlaybackComponent",
+                    "mID": "playbackComponent",
+                    "Buffer": "audioFile",
+                    "ChannelRouting": [
+                        0
+                    ],
+                    "Gain": 1.0,
+                    "StereoPanning": 0.5,
+                    "AutoPlay": true,
+                    "StartPosition": 0.0,
+                    "Duration": 0.0,
+                    "FadeInTime": 0.0,
+                    "FadeOutTime": 0.0,
+                    "Pitch": 1.0
+                },
+                {
+                    "Type": "nap::audio::AudioInputComponent",
+                    "mID": "audioInputComponent",
+                    "Channels": [
+                        0
+                    ],
+                    "Gain": 1.0
+                },
+                {
+                    "Type": "nap::audio::VbanStreamSenderComponent",
+                    "mID": "vbanStreamSenderComponent",
+                    "UdpClient": "UdpClient",
+                    "Input": "playbackComponent",
+                    "StreamName": "localhost"
+                },
+                {
+                    "Type": "nap::audio::LevelMeterComponent",
+                    "mID": "levelMeter",
+                    "Input": "playbackComponent",
+                    "AnalysisWindowSize": 10.0,
+                    "MeterType": "RMS",
+                    "FilterInput": false,
+                    "CenterFrequency": 400.0,
+                    "BandWidth": 100.0,
+                    "Channel": 0
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Type": "nap::RenderWindow",
+            "mID": "Window0",
+            "Borderless": false,
+            "Resizable": true,
+            "Visible": true,
+            "SampleShading": true,
+            "Title": "Vban Sender",
+            "Width": 1280,
+            "Height": 720,
+            "Mode": "Immediate",
+            "ClearColor": {
+                "Values": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                ]
+            },
+            "Samples": "Four",
+            "AdditionalSwapImages": 1
+        },
+        {
+            "Type": "nap::Scene",
+            "mID": "Scene",
+            "Entities": [
+                {
+                    "Entity": "VbanEntity",
+                    "InstanceProperties": []
+                }
+            ]
+        },
+        {
+            "Type": "nap::UDPClient",
+            "mID": "UdpClient",
+            "Thread": "UDPThread_9fc4d1a9",
+            "AllowFailure": false,
+            "Endpoint": "127.0.0.1",
+            "Port": 7777,
+            "MaxQueueSize": 1000,
+            "StopOnMaxQueueSizeExceeded": true
+        },
+        {
+            "Type": "nap::UDPThread",
+            "mID": "UDPThread_9fc4d1a9",
+            "Update Method": "Spawn Own Thread"
+        },
+        {
+            "Type": "nap::audio::AudioFileResource",
+            "mID": "audioFile",
+            "AudioFilePath": "hang.mp3"
+        }
+    ]
+}

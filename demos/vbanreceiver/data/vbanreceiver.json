@@ -1,0 +1,91 @@
+{
+    "Objects": [
+        {
+            "Type": "nap::Entity",
+            "mID": "vbanReceiverEntity",
+            "Components": [
+                {
+                    "Type": "nap::audio::VbanStreamPlayerComponent",
+                    "mID": "vbanAudioComponent",
+                    "VBANPacketReceiver": "vbanPacketReceiver",
+                    "ChannelRouting": [
+                        0
+                    ],
+                    "LatencyMilliSeconds": 5,
+                    "StreamName": "localhost"
+                },
+                {
+                    "Type": "nap::audio::OutputComponent",
+                    "mID": "vbanAudioOutput",
+                    "Input": "vbanAudioComponent",
+                    "Routing": [
+                        0, 0
+                    ]
+                },
+                {
+                    "Type": "nap::audio::LevelMeterComponent",
+                    "mID": "levelMeter",
+                    "Input": "vbanAudioComponent",
+                    "AnalysisWindowSize": 10.0,
+                    "MeterType": "RMS",
+                    "FilterInput": false,
+                    "CenterFrequency": 400.0,
+                    "BandWidth": 100.0,
+                    "Channel": 0
+                }
+            ],
+            "Children": []
+        },
+        {
+            "Type": "nap::RenderWindow",
+            "mID": "Window0",
+            "Borderless": false,
+            "Resizable": true,
+            "Visible": true,
+            "SampleShading": true,
+            "Title": "Vban Receiver",
+            "Width": 1280,
+            "Height": 720,
+            "Mode": "Immediate",
+            "ClearColor": {
+                "Values": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                ]
+            },
+            "Samples": "Four",
+            "AdditionalSwapImages": 1
+        },
+        {
+            "Type": "nap::Scene",
+            "mID": "Scene",
+            "Entities": [
+                {
+                    "Entity": "vbanReceiverEntity",
+                    "InstanceProperties": []
+                }
+            ]
+        },
+        {
+            "Type": "nap::UDPServer",
+            "mID": "UdpServer",
+            "Thread": "UDPThread_0fc49411",
+            "AllowFailure": false,
+            "Port": 7777,
+            "IP Address": ""
+        },
+        {
+            "Type": "nap::UDPThread",
+            "mID": "UDPThread_0fc49411",
+            "Update Method": "Spawn Own Thread"
+        },
+        {
+            "Type": "nap::VBANPacketReceiver",
+            "mID": "vbanPacketReceiver",
+            "Server": "UdpServer",
+            "Channels": 1
+        }
+    ]
+}

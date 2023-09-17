@@ -1,0 +1,17 @@
+{
+    "Type": "nap::ProjectInfo",
+    "mID": "ProjectInfo",
+    "Title": "VbanReceiver",
+    "Version": "1.0.0",
+    "Data": "data/vbanreceiver.json",
+    "PathMapping": "cache/path_mapping.json",
+    "ServiceConfig": "data/service_config.json",
+    "RequiredModules": [
+        "mod_napapp",
+        "mod_napimgui",
+        "mod_napvban",
+        "mod_napaudio",
+        "mod_napudp",
+        "mod_spatialgui"
+    ]
+}

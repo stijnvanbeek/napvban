@@ -1,0 +1,144 @@
+{
+    "Objects": [
+        {
+            "Type": "nap::IMGuiServiceConfiguration",
+            "mID": "IMGuiServiceConfiguration_e38f40c3-5e94-4b14-9092-6832f41a887a",
+            "ColorScheme": "Dark",
+            "FontSize": 17.0,
+            "GlobalScale": 1.0,
+            "FontFile": "",
+            "FontSampling": {
+                "x": 5,
+                "y": 3
+            },
+            "FontSpacing": 0.25,
+            "Colors": {
+                "BackgroundColor": {
+                    "Values": [
+                        45,
+                        45,
+                        45
+                    ]
+                },
+                "DarkColor": {
+                    "Values": [
+                        0,
+                        0,
+                        0
+                    ]
+                },
+                "MenuColor": {
+                    "Values": [
+                        141,
+                        139,
+                        132
+                    ]
+                },
+                "FrontColor1": {
+                    "Values": [
+                        141,
+                        139,
+                        132
+                    ]
+                },
+                "FrontColor2": {
+                    "Values": [
+                        174,
+                        172,
+                        164
+                    ]
+                },
+                "FrontColor3": {
+                    "Values": [
+                        205,
+                        205,
+                        195
+                    ]
+                },
+                "FrontColor4": {
+                    "Values": [
+                        255,
+                        255,
+                        255
+                    ]
+                },
+                "HighlightColor1": {
+                    "Values": [
+                        41,
+                        88,
+                        255
+                    ]
+                },
+                "HighlightColor2": {
+                    "Values": [
+                        214,
+                        255,
+                        163
+                    ]
+                },
+                "HighlightColor3": {
+                    "Values": [
+                        255,
+                        234,
+                        48
+                    ]
+                },
+                "HighlightColor4": {
+                    "Values": [
+                        255,
+                        80,
+                        80
+                    ]
+                },
+                "InvertIcons": false
+            },
+            "StyleSettings": {
+                "FloatSettings": [],
+                "SizeSettings": [],
+                "ColorSettings": []
+            }
+        },
+        {
+            "Type": "nap::ParameterServiceConfiguration",
+            "mID": "ParameterServiceConfiguration_390f5bcc-5ee9-4073-b1bc-2c5160591c2c",
+            "PresetsDirectory": "Presets"
+        },
+        {
+            "Type": "nap::RenderServiceConfiguration",
+            "mID": "RenderServiceConfiguration_0524854a-df44-4659-ba8a-e1a74b1a68a1",
+            "Headless": false,
+            "PreferredGPU": "Discrete",
+            "Layers": [
+                "VK_LAYER_KHRONOS_validation"
+            ],
+            "Extensions": [],
+            "VulkanMajor": 1,
+            "VulkanMinor": 0,
+            "AnisotropicSamples": 8,
+            "EnableHighDPI": true,
+            "EnableCompute": true,
+            "EnableCaching": true,
+            "EnableRobustBufferAccess": false,
+            "ShowLayers": false,
+            "ShowExtensions": false
+        },
+        {
+            "Type": "nap::audio::AudioServiceConfiguration",
+            "mID": "AudioServiceConfiguration_7d9d8c39-8e81-4be3-80e6-2c9b0f7250fc",
+            "Audio Device Settings": {
+                "HostApi": "ASIO",
+                "InputDevice": "ASIO4All v2",
+                "OutputDevice": "ASIO4All v2",
+                "InputChannelCount": 1,
+                "OutputChannelCount": 2,
+                "DisableInput": false,
+                "DisableOutput": false,
+                "SampleRate": 44100.0,
+                "BufferSize": 256,
+                "InternalBufferSize": 256
+            },
+            "AllowChannelCountFailure": true,
+            "AllowDeviceFailure": true
+        }
+    ]
+}

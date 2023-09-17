@@ -1,0 +1,17 @@
+{
+    "Type": "nap::ProjectInfo",
+    "mID": "ProjectInfo",
+    "Title": "VbanSender",
+    "Version": "1.0.0",
+    "Data": "data/vbansender.json",
+    "PathMapping": "cache/path_mapping.json",
+    "ServiceConfig": "data/service_config.json",
+    "RequiredModules": [
+        "mod_napapp",
+        "mod_napimgui",
+        "mod_napvban",
+        "mod_napaudio",
+        "mod_napudp",
+        "mod_spatialgui"
+    ]
+}
